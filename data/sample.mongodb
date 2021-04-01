@@ -1,0 +1,39 @@
+// MongoDB Playground
+// To disable this template go to Settings | MongoDB | Use Default Template For Playground.
+// Make sure you are connected to enable completions and to be able to run a playground.
+// Use Ctrl+Space inside a snippet or a string literal to trigger completions.
+
+// Select the database to use.
+use('datasample');
+
+// The drop() command destroys all data from a collection.
+// Make sure you run it against the correct database and collection.
+db.users.drop();
+
+// Insert a few documents into the sales collection.
+db.users.insertMany([
+  { '_id': 1, 'Lastname': 'Martin', 'Firstname': 'Nicolas', 'email': 'nmartin@foo.com'},
+  { '_id': 2, 'Lastname': 'Dupont', 'Firstname': 'Laurent', 'email': 'ldupont@foo.com'},
+  { '_id': 3, 'Lastname': 'Moreau', 'Firstname': 'Jacques', 'email': 'jmoreau@foo.com'},
+  { '_id': 4, 'Lastname': 'Bernard', 'Firstname': 'Sebastien', 'email': 'sbernard@foo.com'},
+  { '_id': 5, 'Lastname': 'Thomas', 'Firstname': 'Jean', 'email': 'jthomas@foo.com'},
+  { '_id': 6, 'Lastname': 'Petit', 'Firstname': 'Sophie', 'email': 'spetit@foo.com'},
+  { '_id': 7, 'Lastname': 'Durand', 'Firstname': 'Celine', 'email': 'cdurand@foo.com'},
+  { '_id': 8, 'Lastname': 'Dubois', 'Firstname': 'Marie', 'email': 'mdubois@foo.com'},
+  { '_id': 9, 'Lastname': 'Fournier', 'Firstname': 'Chantal', 'email': 'cfournier@foo.com'},
+  { '_id': 10, 'Lastname': 'Morel', 'Firstname': 'Lucie', 'email': 'lmorel@foo.com'},
+]);
+
+// Run a find command to view items sold on April 4th, 2014.
+// db.sales.find({ date: { $gte: new Date('2014-04-04'), $lt: new Date('2014-04-05') } });
+
+// Build an aggregation to view total sales for each product in 2014.
+//  const aggregation = [
+//   { $match: { date: { $gte: new Date('2014-01-01'), $lt: new Date('2015-01-01') } } },
+//   { $group: { _id: '$item', totalSaleAmount: { $sum: { $multiply: [ '$price', '$quantity' ] } } } }
+//  ];
+
+// Run the aggregation and open a cursor to the results.
+// Use toArray() to exhaust the cursor to return the whole result set.
+// You can use hasNext()/next() to iterate through the cursor page by page.
+// db.sales.aggregate(aggregation);
